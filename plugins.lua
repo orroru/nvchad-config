@@ -10,7 +10,6 @@ vim.o.spell = true
 local plugins = {
   {
     "williamboman/mason.nvim",
-    lazy = false,
     opts = {
       ensure_installed = {
         -- markdown
