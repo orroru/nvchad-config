@@ -122,7 +122,7 @@ local plugins = {
         "tsserver",
         "jdtls",
         "tailwindcss",
-        "jsonls"
+        "jsonls",
       }
 
       for _, lsp in ipairs(servers) do
@@ -161,6 +161,21 @@ local plugins = {
         "markdown_inline",
         "terraform",
         "csv",
+      },
+    },
+  },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        layout_strategy = "center",
+        layout_config = {
+          preview_cutoff = 0,
+          anchor = "S",
+          height = 0.5,
+          width = 0.99,
+        },
       },
     },
   },
