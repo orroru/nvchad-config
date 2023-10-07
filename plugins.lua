@@ -355,6 +355,18 @@ local plugins = {
     --   end
     -- end,
   },
+
+  -- Add temp solution to fix context commenting for tsx files 
+  -- Keep eye on this PR https://github.com/numToStr/Comment.nvim/pull/133
+  {
+    "numToStr/Comment.nvim",
+    dependencies = "JoosepAlviste/nvim-ts-context-commentstring",
+    config = function()
+      require("Comment").setup {
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+      }
+    end,
+  },
 }
 
 return plugins
