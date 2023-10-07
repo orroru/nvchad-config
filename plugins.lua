@@ -125,11 +125,30 @@ local plugins = {
         "jsonls",
       }
 
-      for _, lsp in ipairs(servers) do
-        lspconfig[lsp].setup {
-          on_attach = on_attach,
-          capabilities = capabilities,
-        }
+      for _, server in ipairs(servers) do
+        if server == "cssls" then
+          lspconfig[server].setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+            -- Add ignore unknownAtRules to suppress errors when working with tailwindcss
+            settings = {
+              css = { validate = true, lint = {
+                unknownAtRules = "ignore",
+              } },
+              scss = { validate = true, lint = {
+                unknownAtRules = "ignore",
+              } },
+              less = { validate = true, lint = {
+                unknownAtRules = "ignore",
+              } },
+            },
+          }
+        else
+          lspconfig[server].setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+          }
+        end
       end
     end,
   },
@@ -356,7 +375,7 @@ local plugins = {
     -- end,
   },
 
-  -- Add temp solution to fix context commenting for tsx files 
+  -- Add temp solution to fix context commenting for tsx files
   -- Keep eye on this PR https://github.com/numToStr/Comment.nvim/pull/133
   {
     "numToStr/Comment.nvim",
