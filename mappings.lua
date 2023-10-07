@@ -24,7 +24,6 @@ M.general = {
     },
     ["gr"] = { "<cmd>lua require'telescope.builtin'.lsp_references()<CR>", "Find references" },
     ["gd"] = { "<cmd>lua require'telescope.builtin'.lsp_definitions()<CR>", "LSP definitions" },
-    ["<leader>k"] = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Float window diagnostics" },
     -- ["gi"] = { "<cmd>lua require'telescope.builtin'.lsp_implementations()<CR>", "List workspace diagnostics"},
 
     -- Git
