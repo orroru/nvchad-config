@@ -2,8 +2,8 @@
 local M = {}
 
 M.ui = {
-  theme_toggle = { "onedark", "one_light", "catppuccin" },
-  theme = "catppuccin",
+  theme_toggle = { "github_dark" },
+  theme = "github_dark",
 
   hl_override = {
     CursorLine = {

@@ -94,10 +94,11 @@ local plugins = {
           formatting.prettier,
           formatting.stylua,
           formatting.gofmt,
+          formatting.black,
         }
 
         null_ls.setup {
-          debug = true,
+          -- debug = true,
           sources = sources,
         }
       end,
@@ -204,6 +205,9 @@ local plugins = {
     opts = {
       git = {
         enable = true,
+      },
+      view = {
+        adaptive_size = true,
       },
       renderer = {
         highlight_git = true,
